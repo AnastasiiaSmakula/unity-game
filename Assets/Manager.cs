@@ -2,12 +2,20 @@ using System.Collections.Generic;
 using Unity.Collections;
 using UnityEngine;
 
+public enum GameState
+{
+    StartGame,
+    InGame,
+    EndGame
+}
+
 public class Manager : MonoBehaviour
 {
     public BirdScript Bird;
     public PipeSpawner Pipe;
     public CloudSpawner Clouds;
     public int score = 0;
+    public GameState CurrentState;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -40,6 +48,11 @@ public class Manager : MonoBehaviour
     {
         score = 0;
 
+    }
+
+    public void StartGame()
+    {
+        CurrentState = GameState.InGame;
     }
 }
 

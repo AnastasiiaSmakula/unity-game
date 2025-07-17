@@ -17,6 +17,18 @@ public class BirdScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Manager.CurrentState == GameState.StartGame)
+        {
+            rigidbody.simulated = false;
+        }
+        else if (Manager.CurrentState == GameState.InGame)
+        {
+            rigidbody.simulated = true;
+        }
+        else
+        {
+            rigidbody.simulated = false;
+        }
 
 
         // if (Input.GetKeyDown(KeyCode.UpArrow))
