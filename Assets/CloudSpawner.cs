@@ -7,6 +7,7 @@ public class CloudSpawner : MonoBehaviour
     public float spawnRate = 3f;
     private float timer = 0f;
     public float heightOffset = 5f;
+    public List<GameObject> Clouds = new List<GameObject>();
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -36,5 +37,17 @@ public class CloudSpawner : MonoBehaviour
 
         GameObject newCloud = Instantiate(cloudPrefab, spawnPosition, Quaternion.identity);
         newCloud.SetActive(true);
+
+        Clouds.Add(newCloud);
+    }
+
+    public void resetClouds()
+    {
+
+        foreach (GameObject Cloud in Clouds)
+        {
+            Destroy(Cloud);
+        }
+        Clouds.Clear();
     }
 }

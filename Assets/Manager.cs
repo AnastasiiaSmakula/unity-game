@@ -6,6 +6,7 @@ public class Manager : MonoBehaviour
 {
     public BirdScript Bird;
     public PipeSpawner Pipe;
+    public CloudSpawner Clouds;
     public int score = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -26,6 +27,7 @@ public class Manager : MonoBehaviour
         Bird.transform.position = new Vector3(0, 0, 0);
         Bird.rigidbody.linearVelocityY = 0;
         ResetScore();
+        Clouds.resetClouds();
     }
 
     public void IncreaseScore()
