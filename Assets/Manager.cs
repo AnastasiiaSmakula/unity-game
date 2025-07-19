@@ -31,6 +31,7 @@ public class Manager : MonoBehaviour
 
     public void GameOver()
     {
+        CurrentState = GameState.EndGame;
         Pipe.resetPipe();
         Bird.transform.position = new Vector3(0, 0, 0);
         Bird.rigidbody.linearVelocityY = 0;

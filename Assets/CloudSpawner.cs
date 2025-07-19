@@ -3,12 +3,15 @@ using UnityEngine;
 
 public class CloudSpawner : MonoBehaviour
 {
+    // References
     public GameObject cloudPrefab;
     public float spawnRate = 3f;
-    private float timer = 0f;
     public float heightOffset = 5f;
-    public List<GameObject> Clouds = new List<GameObject>();
     public Manager Manager;
+
+    // State
+    private float timer = 4f;
+    public List<GameObject> Clouds = new List<GameObject>();
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -53,5 +56,6 @@ public class CloudSpawner : MonoBehaviour
             Destroy(Cloud);
         }
         Clouds.Clear();
+        timer = 4f;
     }
 }
