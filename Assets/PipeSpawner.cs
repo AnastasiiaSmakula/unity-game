@@ -9,6 +9,7 @@ public class PipeSpawner : MonoBehaviour
     public float spawnRate = 2;
     private float timer = 0;
     public float heighOffset = 10;
+    public Manager Manager;
     public List<GameObject> Mapa = new List<GameObject>();
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -19,14 +20,17 @@ public class PipeSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (timer < spawnRate)
+        if (Manager.CurrentState == GameState.InGame)
         {
-            timer += Time.deltaTime;
-        }
-        else
-        {
-            spawnMapa();
-            timer = 0;
+            if (timer < spawnRate)
+            {
+                timer += Time.deltaTime;
+            }
+            else
+            {
+                spawnMapa();
+                timer = 0;
+            }
         }
 
     }

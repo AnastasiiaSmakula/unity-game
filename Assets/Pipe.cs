@@ -14,9 +14,20 @@ public class Pipe : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // transform.position = new Vector3(transform.position.x - 0.01f, 1.6f, 0);
-        transform.position = transform.position + (Vector3.left * moveSpeed) * Time.deltaTime;
-        CheckForScore();
+        // transform.position = transform.position + (Vector3.left * moveSpeed) * Time.deltaTime;
+        // CheckForScore();
+
+        if (Manager.CurrentState == GameState.StartGame)
+        {
+        }
+        else if (Manager.CurrentState == GameState.InGame)
+        {
+            transform.position = transform.position + (Vector3.left * moveSpeed) * Time.deltaTime;
+            CheckForScore();
+        }
+        else
+        {
+        }
     }
 
     void CheckForScore()
@@ -29,4 +40,5 @@ public class Pipe : MonoBehaviour
         ;
 
     }
+
 }

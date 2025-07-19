@@ -55,9 +55,3 @@ public class Manager : MonoBehaviour
         CurrentState = GameState.InGame;
     }
 }
-
-
-// 1. Vytvorit script na Text (TMP) v UI aby mohol nastavit text
-// 2. Vypocitat skore podla pipespawner
-// 3. Likonvat Score script aj tu
-// 3. Tu, v Update(), posunut skore s pipeswanera do SCore script :)

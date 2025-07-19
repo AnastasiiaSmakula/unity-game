@@ -8,6 +8,7 @@ public class CloudSpawner : MonoBehaviour
     private float timer = 0f;
     public float heightOffset = 5f;
     public List<GameObject> Clouds = new List<GameObject>();
+    public Manager Manager;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -18,14 +19,17 @@ public class CloudSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (timer < spawnRate)
+        if (Manager.CurrentState == GameState.InGame)
         {
-            timer += Time.deltaTime;
-        }
-        else
-        {
-            SpawnCloud();
-            timer = 0f;
+            if (timer < spawnRate)
+            {
+                timer += Time.deltaTime;
+            }
+            else
+            {
+                SpawnCloud();
+                timer = 0f;
+            }
         }
     }
 
