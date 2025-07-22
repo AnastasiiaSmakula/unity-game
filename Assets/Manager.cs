@@ -35,7 +35,6 @@ public class Manager : MonoBehaviour
         Pipe.resetPipe();
         Bird.transform.position = new Vector3(0, 0, 0);
         Bird.rigidbody.linearVelocityY = 0;
-        ResetScore();
         Clouds.resetClouds();
     }
 
@@ -47,6 +46,7 @@ public class Manager : MonoBehaviour
 
     public void ResetScore()
     {
+
         score = 0;
 
     }
@@ -54,5 +54,6 @@ public class Manager : MonoBehaviour
     public void StartGame()
     {
         CurrentState = GameState.InGame;
+        ResetScore();
     }
 }
