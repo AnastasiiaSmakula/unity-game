@@ -16,6 +16,7 @@ public class Manager : MonoBehaviour
     public CloudSpawner Clouds;
     public int score = 0;
     public GameState CurrentState;
+    public float Difficulty = 0f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -26,6 +27,8 @@ public class Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Difficulty += Time.deltaTime;
+
 
     }
 
@@ -55,5 +58,6 @@ public class Manager : MonoBehaviour
     {
         CurrentState = GameState.InGame;
         ResetScore();
+        Difficulty = 0;
     }
 }

@@ -5,6 +5,8 @@ public class Pipe : MonoBehaviour
     public float moveSpeed = 5;
     public Manager Manager;
     public bool HasScored;
+    public float HowFastToGetHarder;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -22,8 +24,10 @@ public class Pipe : MonoBehaviour
         }
         else if (Manager.CurrentState == GameState.InGame)
         {
-            transform.position = transform.position + (Vector3.left * moveSpeed) * Time.deltaTime;
+            transform.position = transform.position + (Vector3.left * moveSpeed) * Time.deltaTime * (Manager.Difficulty * HowFastToGetHarder);
             CheckForScore();
+
+
         }
         else
         {

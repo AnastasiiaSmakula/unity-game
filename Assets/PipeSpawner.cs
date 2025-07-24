@@ -9,6 +9,9 @@ public class PipeSpawner : MonoBehaviour
     public float spawnRate = 2;
     private float timer = 0;
     public float heighOffset = 10;
+    public float gapSize = 5f;
+    public float minGapSize = 2f;
+    public float gapDecreaseRate = 0.1f;
     public Manager Manager;
     public List<GameObject> Mapa = new List<GameObject>();
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -40,10 +43,27 @@ public class PipeSpawner : MonoBehaviour
         float lowestPoint = transform.position.y - heighOffset;
         float highestPoint = transform.position.y + heighOffset;
 
-        GameObject newObject = Instantiate(mapa, new Vector3(transform.position.x, Random.Range(lowestPoint, highestPoint), 0), transform.rotation);
+        float centerY = Random.Range(lowestPoint + gapSize / 2, highestPoint - gapSize / 2);
+
+        Vector3 position = new Vector3(
+            transform.position.x, //x
+            centerY, //y
+            0); //z
+        //GameObject newPipe = Instantiate(mapa, new Vector3(1,1,1));
+        GameObject newObject = Instantiate(mapa, position, transform.rotation);
         newObject.SetActive(true);
 
         Mapa.Add(newObject);
+
+        gapSize = Mathf.Max(minGapSize, gapSize - gapDecreaseRate * Time.deltaTime);
+
+        Transform topPipeTransform = newObject.transform.GetChild(0);
+        Transform bottomPipeTransform = newObject.transform.GetChild(1);
+
+        topPipeTransform.localPosition = topPipeTransform.localPosition + new Vector3(0, gapSize, 0);
+        bottomPipeTransform.localPosition = bottomPipeTransform.localPosition - new Vector3(0, gapSize, 0);
+
+
 
     }
 

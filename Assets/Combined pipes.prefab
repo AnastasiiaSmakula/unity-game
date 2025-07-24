@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 304851370428710685}
   serializedVersion: 2
   m_LocalRotation: {x: -7.2759567e-12, y: 0.0065870634, z: 2.3283062e-10, w: 0.9999783}
-  m_LocalPosition: {x: 17.6, y: 14.1, z: -0.2}
+  m_LocalPosition: {x: 17.6, y: 14.49, z: -0.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -182,6 +182,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   Manager: {fileID: 0}
+  HasScored: 0
+  HowFastToGetHarder: 0.1
 --- !u!1 &6853709040263837620
 GameObject:
   m_ObjectHideFlags: 0
