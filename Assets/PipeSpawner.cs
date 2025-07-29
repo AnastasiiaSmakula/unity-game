@@ -1,6 +1,4 @@
-using System.Threading;
 using System.Collections.Generic;
-using UnityEditor.Rendering;
 using UnityEngine;
 
 public class PipeSpawner : MonoBehaviour
