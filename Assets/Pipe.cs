@@ -6,6 +6,7 @@ public class Pipe : MonoBehaviour
     public Manager Manager;
     public bool HasScored;
     public float HowFastToGetHarder;
+    public PipeSpawner PipeSpawner;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -25,6 +26,15 @@ public class Pipe : MonoBehaviour
         else if (Manager.CurrentState == GameState.InGame)
         {
             transform.position = transform.position + (Vector3.left * moveSpeed) * Time.deltaTime * (Manager.Difficulty * HowFastToGetHarder);
+
+
+            if (transform.position.x < -45)
+            {
+                PipeSpawner.spawnMapa();
+                gameObject.SetActive(false);
+            }
+
+
             CheckForScore();
 
 

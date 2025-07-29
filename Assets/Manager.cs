@@ -27,9 +27,7 @@ public class Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Difficulty += Time.deltaTime;
-
-
+        Difficulty += Time.deltaTime * 0.5f;
     }
 
     public void GameOver()
@@ -57,6 +55,7 @@ public class Manager : MonoBehaviour
     public void StartGame()
     {
         CurrentState = GameState.InGame;
+        Pipe.spawnMapa();
         ResetScore();
         Difficulty = 0;
     }

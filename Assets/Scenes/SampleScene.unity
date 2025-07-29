@@ -448,6 +448,10 @@ PrefabInstance:
       propertyPath: Manager
       value: 
       objectReference: {fileID: 1393141531}
+    - target: {fileID: 8180275714967635196, guid: a705b5e1f458c46b8b164cf328f9d4f3, type: 3}
+      propertyPath: PipeSpawner
+      value: 
+      objectReference: {fileID: 710798256}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1285,7 +1289,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: -0.23, z: -10}
+  m_LocalPosition: {x: -0.09, y: 0.14, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1459,7 +1463,7 @@ Transform:
   m_GameObject: {fileID: 628361740}
   serializedVersion: 2
   m_LocalRotation: {x: -0.004753442, y: -0, z: -0, w: 0.99998873}
-  m_LocalPosition: {x: 0.4, y: -1.1, z: 0}
+  m_LocalPosition: {x: 0.31, y: 0.57, z: -0.02}
   m_LocalScale: {x: 0.91161, y: 0.8845363, z: 0.91161}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1481,7 +1485,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0.8
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -1576,6 +1580,9 @@ MonoBehaviour:
   mapa: {fileID: 1960081901}
   spawnRate: 5
   heighOffset: 10
+  gapSize: 5
+  minGapSize: 2
+  gapDecreaseRate: 100
   Manager: {fileID: 1393141531}
   Mapa: []
 --- !u!4 &710798257
@@ -2218,6 +2225,7 @@ MonoBehaviour:
   Clouds: {fileID: 1185051365}
   score: 0
   CurrentState: 0
+  Difficulty: 0
 --- !u!4 &1393141532
 Transform:
   m_ObjectHideFlags: 0

@@ -17,28 +17,16 @@ public class PipeSpawner : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        spawnMapa();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Manager.CurrentState == GameState.InGame)
-        {
-            if (timer < spawnRate)
-            {
-                timer += Time.deltaTime;
-            }
-            else
-            {
-                spawnMapa();
-                timer = 0;
-            }
-        }
 
     }
 
-    void spawnMapa()
+    public void spawnMapa()
     {
         float lowestPoint = transform.position.y - heighOffset;
         float highestPoint = transform.position.y + heighOffset;
@@ -77,3 +65,10 @@ public class PipeSpawner : MonoBehaviour
         Mapa.Clear();
     }
 }
+
+// rychlost - zmensit 
+// ked pojdem mimo obrazovky tak skonc hru - y 
+//VYLEPSENIA
+// 3D - AUTICKA, 
+
+

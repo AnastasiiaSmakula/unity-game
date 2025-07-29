@@ -24,6 +24,12 @@ public class BirdScript : MonoBehaviour
         else if (Manager.CurrentState == GameState.InGame)
         {
             rigidbody.simulated = true;
+
+            float birdY = transform.position.y;
+            if (birdY > 16f || birdY < -16f)
+            {
+                Manager.GameOver();
+            }
         }
         else
         {
